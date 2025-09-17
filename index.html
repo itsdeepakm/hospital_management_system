@@ -27,10 +27,58 @@
         <h2>Login</h2>
         <form id="loginForm">
         <input type="email" id="loginEmail" placeholder="Email" required>
+        <div></div>
         <input type="password" id="loginPassword" placeholder="Password" required>
-        <button type="submit">Login</button>
+        <div></div>
+        <button type="submit" id="btn">Login</button>
         </form>
     </div>
+
+<section id="adminDash" hidden>
+  <h2>Admin Dashboard</h2>
+  <p>Doctors can add and view all patients:</p>
+
+  <form id="createPatientForm">
+    <input type="text" id="patientName" placeholder="Patient Name" required>
+    <input type="number" id="patientAge" placeholder="Age" required>
+    <select id="patientDept" required>
+      <option value="">Select Department</option>
+      <option>Cardiology</option>
+      <option>Orthopedics</option>
+      <option>General</option>
+    </select>
+    <button type="submit">Save</button>
+  </form>
+
+  <h3 style="margin-top:25px;">All Patients</h3>
+  <table id="adminPatientTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Department</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
+<section id="patientDash" hidden>
+  <h2>Patient Dashboard</h2>
+  <p>Welcome, patient! Here is the list of patients (read-only):</p>
+
+  <table id="patientViewTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Department</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+
 
     <script src="script.js"></script>
 </body>
