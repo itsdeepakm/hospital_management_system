@@ -45,8 +45,16 @@ document.getElementById("signupForm")
  function handlelogin(){
     const email=document.getElementById("loginEmail").value;
     const password=document.getElementById("loginPassword").value;
-    if(users.find(e=>e.email===email && e.password===password)){
-        
+    const user=users.find(e=>e.email===email && e.password===password);
+    if(!user){
+        alert("invalid crendentials");
+        return;
+    }
+    currentuser=user;
+    if(user.role==="admin"){
+        showpage("adminDash");
+    }else{
+        showpage("patientDash");
     }
  } 
 
