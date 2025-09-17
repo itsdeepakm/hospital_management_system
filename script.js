@@ -57,4 +57,39 @@ document.getElementById("signupForm")
         showpage("patientDash");
     }
  } 
+   document.getElementById("createPatientForm").addEventListener("submit",e=>{
+    e.preventDefault();
+    const p={
+      name:document.getElementById("patientName").value,
+      age:document.getElementById("patientAge").value,
+      dept:document.getElementById("patientDept").value
+    };
+    patients.push(p);
+    renderAdminTable();
+    e.target.reset();
+  });
+
+
+
+
+  function renderAdminTable(){
+    const body=document.querySelector("#adminPatientTable tbody");
+    body.innerHTML="";
+    patients.forEach(p=>{
+      const tr=document.createElement("tr");
+      tr.innerHTML=`<td>${p.name}</td><td>${p.age}</td><td>${p.dept}</td>`;
+      body.appendChild(tr);
+    });
+
+}
+function renderPatientView(){
+    const body=document.querySelector("#patientViewTable tbody");
+    body.innerHTML="";
+    patients.forEach(p=>{
+      const tr=document.createElement("tr");
+      tr.innerHTML=`<td>${p.name}</td><td>${p.age}</td><td>${p.dept}</td>`;
+      body.appendChild(tr);
+    });
+
+}
 
