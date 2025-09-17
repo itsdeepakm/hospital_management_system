@@ -7,23 +7,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="wrapper">
+ <main>   
+    <section class="wrapper">
         <nav class="nav">
           <div class="nav-menu"  id="navMenu">
                <ul>
-                <li><a href="#" class="link active">Home</a></li>
-                 <li><a href="#" class="link">Blog</a></li>
-                <li><a href="#" class="link">Services</a></li>
-                 <li><a href="#" class="link">About</a></li>
+                <li><a href="#"data-page="home" class="link active">Home</a></li>
+                 <li><a href="#"data-page="adminDash" class="link">Admin</a></li>
+                <li><a href="#" data-page="patientDash" class="link">Patients</a></li>
+                 <li><a href="#" data-page="signup" class="link">signup</a></li>
+                <li><a href="#" data-page="login" class="link">login</a></li>
+
                </ul>
           </div>
           <div class="nav-button">
-            <button>Login</button>
-            <button>Sign up</button>
+          
           </div>
         </nav>
-    </div>
-    <div id="login">
+    </section>
+    <section id="login" hidden>
         <h2>Login</h2>
         <form id="loginForm">
         <input type="email" id="loginEmail" placeholder="Email" required>
@@ -32,7 +34,26 @@
         <div></div>
         <button type="submit" id="btn">Login</button>
         </form>
-    </div>
+    </section>
+
+<section id="signup" hidden>
+  <h2>Create Account</h2>
+  <form id="signupForm">
+    <input type="text" id="signupName" placeholder="Full Name" required>
+    <div></div>
+    <input type="email" id="signupEmail" placeholder="Email" required>
+    <div></div>
+    <input type="password" id="signupPassword" placeholder="Password" required>
+    <div></div>
+    <select id="signupRole" required>
+      <option value="">Select Role</option>
+      <option value="admin">Admin</option>
+      <option value="patient">Patient</option>
+    </select>
+    <div></div>
+    <button type="submit">Register</button>
+  </form>
+</section>
 
 <section id="adminDash" hidden>
   <h2>Admin Dashboard</h2>
@@ -78,7 +99,7 @@
   </table>
 </section>
 
-
+</main>
 
     <script src="script.js"></script>
 </body>
